@@ -58,11 +58,14 @@ fs.readdir("./komendy/", (err, files) => {
   }
   if(cmd === "--say"){
     const sayMessage = args.join(" ")
+    .setTitle("[**ogloszenie**] <@&481860406110060565>")
+    .addField("opis", sayMessage)
+    .setFooter(`Ogloszenie wyslane przez przez: ${message.author.username}`, `${message.author.avatarURL}`);
     message.delete().catch();
     message.channel.send(sayMessage);
     message.react("452183703267835910");
   }
-  if(cmd === "--partnerzy"){
+  if(cmd === "--ogloszenia"){
     message.delete();
     const embed = new Discord.RichEmbed()
       .setColor("#9b0090")
@@ -74,7 +77,14 @@ fs.readdir("./komendy/", (err, files) => {
     message.channel.send({embed});
     message.react("452183703267835910");
   }
-  if(message.content.startsWith('$poll')) {
+  if(cmd === "--help"){
+    const embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle("Komendy w bocie OgloszeniaBOT")
+    .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``--poll <odp 1> <odp 2> <odp 3> -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera Our Community \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix", "Wiecej informacji wkrótce ")
+    .setFooter("Prefix na wszystkie komendy to --")
+  }
+  if(message.content.startsWith('--poll')) {
 
     let args = message.content.slice(1).split(" "); // komenda bez $ + argumenty oddzielone spacją
     console.log(args)
@@ -118,6 +128,6 @@ fs.readdir("./komendy/", (err, files) => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Miłego dnia :).", {type: "STREAMING"});
+  bot.user.setActivity("Wszystko cacy :>", {type: "STREAMING"});
 });
 bot.login(process.env.BOT_TOKEN)

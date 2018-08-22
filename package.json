@@ -1,0 +1,16 @@
+{
+  "name": "vsc",
+  "version": "3.0.0",
+  "description": "bot do gc",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kociak",
+  "license": "ISC"
+}

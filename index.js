@@ -78,11 +78,12 @@ fs.readdir("./komendy/", (err, files) => {
     message.react("452183703267835910");
   }
   if(cmd === "--help"){
-    const embed = new Discord.RichEmbed()
+    const eembed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle("Komendy w bocie OgloszeniaBOT")
     .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``--poll <odp 1> <odp 2> <odp 3> -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera Our Community \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix", "Wiecej informacji wkrótce ")
     .setFooter("Prefix na wszystkie komendy to --")
+    message.channel.send(eembed)
   }
   if(message.content.startsWith('--poll')) {
 

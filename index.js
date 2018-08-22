@@ -123,4 +123,4 @@ bot.on("ready", async() => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("Miłego dnia :).", {type: "STREAMING"});
 });
-bot.login("NDY5OTI3MDI3ODI3NDA4OTEx.Dl8VKA.17_ON3RxglSMu8rf8xll5UVGfic");
+bot.login(process.env.BOT_TOKEN)

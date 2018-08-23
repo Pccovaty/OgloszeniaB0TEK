@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fs = require("fs");
+constt moment = require("moment");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
@@ -38,7 +39,8 @@ fs.readdir("./komendy/", (err, files) => {
     const embed = new Discord.RichEmbed()
     .setTitle("Newsy z serwera Our Community!")
     .addField("Bot został zaczęty o ``16:32 22.08.2018``", "Developerami bota są: ``๖̶̶̶ζ͜͡Kociak 💞#6365``")
-    message.channel.send(embed);
+    .setFooter("**Data wysłania:**", `${moment(message.createdAt).calendar()}`)
+   message.channel.send(embed);
   }
 
   if(message.content === "<@469927027827408911>") {

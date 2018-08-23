@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require("fs");
-constt moment = require("moment");
+const moment = require("moment");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 

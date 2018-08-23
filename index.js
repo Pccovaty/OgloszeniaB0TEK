@@ -39,7 +39,7 @@ fs.readdir("./komendy/", (err, files) => {
     const embed = new Discord.RichEmbed()
     .setTitle("Newsy z serwera Our Community!")
     .addField("Bot został zaczęty o ``16:32 22.08.2018``", "Developerami bota są: ``๖̶̶̶ζ͜͡Kociak 💞#6365``")
-    .setFooter("**Data wysłania:**", `${moment(message.createdAt).calendar()}`)
+    .setFooter("**Data wysłania:**", 23.08.2018 22:08`)
    message.channel.send(embed);
   }
 
@@ -69,8 +69,8 @@ fs.readdir("./komendy/", (err, files) => {
     const embed = new Discord.RichEmbed()
       .setColor("#9b0090")
       .setDescription("[**ogloszenie**] Hej <@&435826416488022017>")
-      .addField("opis", args.join(" "))
-      .addField("Data wysłania:", )
+      .addField("**opis**", args.join(" "))
+      .addField("Data wysłania:", "Data nie zostala okreslona!")
       .setFooter(`Ogloszenie wyslane przez przez: ${message.author.username}`, `${message.author.avatarURL}`);
   
     message.channel.send({embed});
@@ -128,6 +128,6 @@ fs.readdir("./komendy/", (err, files) => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Wszystko cacy :>", {type: "STREAMING"});
+  bot.user.setActivity("Jestem zagubiony jak nemo", {type: "STREAMING"});
 });
 bot.login(process.env.BOT_TOKEN)

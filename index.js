@@ -38,7 +38,6 @@ fs.readdir("./komendy/", (err, files) => {
     const embed = new Discord.RichEmbed()
     .setTitle("Newsy z serwera Our Community!")
     .addField("Bot został zaczęty o ``16:32 22.08.2018``", "Developerami bota są: ``๖̶̶̶ζ͜͡Kociak 💞#6365``")
-    .setFooter("**Data wysłania:**", "23.08.2018 22:08");
    message.channel.send(embed);
   }
 

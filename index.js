@@ -58,9 +58,6 @@ fs.readdir("./komendy/", (err, files) => {
   }
   if(cmd === "--say"){
     const sayMessage = args.join(" ")
-    .setTitle("[**ogloszenie**] <@&481860406110060565>")
-    .addField("opis", sayMessage)
-    .setFooter(`Ogloszenie wyslane przez przez: ${message.author.username}`, `${message.author.avatarURL}`);
     message.delete().catch();
     message.channel.send(sayMessage);
     message.react("452183703267835910");

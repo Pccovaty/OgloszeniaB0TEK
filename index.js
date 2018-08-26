@@ -100,6 +100,7 @@ fs.readdir("./komendy/", (err, files) => {
     .setColor('RANDOM')
     .setDescription("Zaproś bota na swój serwer! \n :link: https://discordapp.com/oauth2/authorize?client_id=469927027827408911&scope=bot&permissions=335560766 ")
     .setTitle("Dołącz do mojego discorda, gdzie mozesz otrzymać pomoc! \n https://discord.gg/pppgZCV")
+    message.channel.send(eambed)
     }
   if(message.content.startsWith('--poll')) {
 

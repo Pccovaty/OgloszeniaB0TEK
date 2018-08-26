@@ -112,13 +112,13 @@ fs.readdir("./komendy/", (err, files) => {
     let args = message.content.slice(1).split(" "); // komenda bez $ + argumenty oddzielone spacją
     console.log(args)
     args.shift(); // usuwa komendę
-    args = args.join(" ").split("; ") // dołącza oddzielone spacją argumenty w jedność, oddziela je ;  (średnikiem i spacją)
+    args = args.join(" ").split(" | ") // dołącza oddzielone spacją argumenty w jedność, oddziela je ;  (średnikiem i spacją)
     console.log(args)
     var title = args.shift(); // usuwa pierwszy argument; ustawia tytuł ankiety
     var opcje = args; // reszta argumentów
     console.log(title)
     console.log(opcje)
-    if (opcje.length !== 3) return message.channel.send("Musisz podać tytuł i 3 opcje, oddzielone `;`.");
+    if (opcje.length !== 2) return message.channel.send("O nie! Komenda uległa awarii, develoeprzy zotali powiadomieni o tym błędzie!");
     let reply = ` **Pytanie:** \n ${title} \n\n **Odpowiedź:** \n ${opcje.map((o, i) => `${i + 1}: ${o}`).join("\n")}`;
     message.delete(0);
     message.channel.send({embed:  {

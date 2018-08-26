@@ -78,7 +78,7 @@ fs.readdir("./komendy/", (err, files) => {
      if(message.content === "--zapros"){
     message.react("✅")
     return message.channel.send("Dołącz do mojego discorda, gdzie mozesz otrzymać pomoc! \n https://discord.gg/pppgZCV \n \n \n Zaproś bota na swój serwer! \n :link: https://discordapp.com/oauth2/authorize?client_id=469927027827408911&scope=bot&permissions=335560766  ")
-       
+     }
        
     if(cmd === "--ogloszenia"){
     message.delete();

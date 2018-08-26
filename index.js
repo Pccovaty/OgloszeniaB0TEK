@@ -75,6 +75,11 @@ fs.readdir("./komendy/", (err, files) => {
     message.react("452183703267835910");
   
   }
+     if(message.content === "--zapros"){
+    message.react("✅")
+    return message.channel.send("Dołącz do mojego discorda, gdzie mozesz otrzymać pomoc! \n https://discord.gg/pppgZCV \n \n \n Zaproś bota na swój serwer! \n :link: https://discordapp.com/oauth2/authorize?client_id=469927027827408911&scope=bot&permissions=335560766  ")
+       
+       
     if(cmd === "--ogloszenia"){
     message.delete();
     const embed = new Discord.RichEmbed()
@@ -98,8 +103,8 @@ fs.readdir("./komendy/", (err, files) => {
     if(cmd === "--invite"){
     const eambed = new Discord.RichEmbed() 
     .setColor('RANDOM')
-    .setDescription("Zaproś bota na swój serwer! \n :link: https://discordapp.com/oauth2/authorize?client_id=469927027827408911&scope=bot&permissions=335560766 ")
     .setTitle("Dołącz do mojego discorda, gdzie mozesz otrzymać pomoc! \n https://discord.gg/pppgZCV")
+    .setDescription("Zaproś bota na swój serwer! \n :link: https://discordapp.com/oauth2/authorize?client_id=469927027827408911&scope=bot&permissions=335560766 ")
     message.channel.send(eambed)
     }
   if(message.content.startsWith('--poll')) {

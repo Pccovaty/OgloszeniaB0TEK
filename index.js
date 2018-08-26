@@ -36,8 +36,8 @@ fs.readdir("./komendy/", (err, files) => {
 
   if(message.content === '--news') {
     const embed = new Discord.RichEmbed()
-    .setTitle("Newsy z serwera Our Community!")
-    .addField("Bot został zaczęty o ``16:32 22.08.2018``", "Developerami bota są: ``๖̶̶̶ζ͜͡Kociak 💞#6365``")
+    .setTitle("Newsy z serwera!")
+    .setDescription("Masz problem z botem? napisz do ``๖̶̶̶ζ͜͡Kociak 💞#6365``") 
    message.channel.send(embed);
   }
 
@@ -62,18 +62,31 @@ fs.readdir("./komendy/", (err, files) => {
     message.channel.send(sayMessage);
     message.react("452183703267835910");
   }
-  if(cmd === "--ogloszenia"){
+  if(cmd === "--ogloszenie"){
     message.delete();
     const embed = new Discord.RichEmbed()
       .setColor("#9b0090")
       .setDescription("[**ogloszenie**] Hej <@&435826416488022017>")
       .addField("**opis**", args.join(" "))
-      .addField("Data wysłania:", "Data nie zostala okreslona!")
       .setFooter(`Ogloszenie wyslane przez przez: ${message.author.username}`, `${message.author.avatarURL}`);
+ 
   
     message.channel.send({embed});
     message.react("452183703267835910");
+  
   }
+    if(cmd === "--ogloszenia"){
+    message.delete();
+    const embed = new Discord.RichEmbed()
+      .setColor("#9b0090")
+      .setDescription("[**ogloszenie**] Hej everyone!")
+      .addField("**opis**", args.join(" "))
+      .setFooter(`${message.author.tag}`, `${message.author.avatarURL}`);
+ 
+  
+    message.channel.send({embed});
+    message.react("452183703267835910");
+    }
   if(cmd === "--help"){
     const eembed = new Discord.RichEmbed()
     .setColor('RANDOM')

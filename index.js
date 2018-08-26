@@ -62,7 +62,7 @@ fs.readdir("./komendy/", (err, files) => {
     message.channel.send(sayMessage);
     message.react("452183703267835910");
   }
-  if(cmd === "--ogloszenie"){
+  if(cmd === "--oc"){
     message.delete();
     const embed = new Discord.RichEmbed()
       .setColor("#9b0090")
@@ -91,10 +91,16 @@ fs.readdir("./komendy/", (err, files) => {
     const eembed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle("Komendy w bocie OgloszeniaBOT")
-    .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``--poll <odp 1> <odp 2> <odp 3> -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera Our Community \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix", "Wiecej informacji wkrótce ")
+    .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``--poll <odp 1> <odp 2> <odp 3> -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera. \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix \n ``--invite`` -> bot wysyła linka na zaproszenie na swój serwer, oraz zaproszenie na twój serwer.", "Wiecej informacji wkrótce ")
     .setFooter("Prefix na wszystkie komendy to --")
     message.channel.send(eembed)
   }
+    if(cmd === "--invite"){
+    const eambed = new Discord.RichEmbed() 
+    .setColor('RANDOM')
+    .setDescription("Zaproś bota na swój serwer! \n :link: https://discordapp.com/oauth2/authorize?client_id=469927027827408911&scope=bot&permissions=335560766 ")
+    .setTitle("Dołącz do mojego discorda, gdzie mozesz otrzymać pomoc! \n https://discord.gg/pppgZCV")
+    }
   if(message.content.startsWith('--poll')) {
 
     let args = message.content.slice(1).split(" "); // komenda bez $ + argumenty oddzielone spacją

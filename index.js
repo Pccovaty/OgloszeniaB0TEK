@@ -37,7 +37,8 @@ fs.readdir("./komendy/", (err, files) => {
   if(message.content === '--news') {
     const embed = new Discord.RichEmbed()
     .setTitle("Newsy z serwera!")
-    .setDescription("Masz problem z botem? napisz do ``๖̶̶̶ζ͜͡Kociak 💞#6365``") 
+    .setDescription("Komenda ``--poll`` jest aktualnie nieczynna, przepraszamy za usterki") 
+    .setFooter("Kociak (DEV)")
    message.channel.send(embed);
   }
 
@@ -151,6 +152,6 @@ fs.readdir("./komendy/", (err, files) => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("--help", {type: "WATCHING"});
+  bot.user.setActivity("--news", {type: "WATCHING"});
 });
 bot.login(process.env.BOT_TOKEN)

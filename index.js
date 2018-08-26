@@ -118,7 +118,7 @@ fs.readdir("./komendy/", (err, files) => {
     var opcje = args; // reszta argumentów
     console.log(title)
     console.log(opcje)
-    if (opcje.length !== 2) return message.channel.send("O nie! Komenda uległa awarii, develoeprzy zotali powiadomieni o tym błędzie!");
+    if (opcje.length !== 2) return message.channel.send("O nie! Komenda uległa awarii, developerzy zotali powiadomieni o tym błędzie!");
     let reply = ` **Pytanie:** \n ${title} \n\n **Odpowiedź:** \n ${opcje.map((o, i) => `${i + 1}: ${o}`).join("\n")}`;
     message.delete(0);
     message.channel.send({embed:  {

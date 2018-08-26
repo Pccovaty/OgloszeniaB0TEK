@@ -68,7 +68,7 @@ fs.readdir("./komendy/", (err, files) => {
       .setColor("#9b0090")
       .setDescription("[**ogloszenie**] Hej <@&435826416488022017>")
       .addField("**opis**", args.join(" "))
-      .setFooter(`Ogloszenie wyslane przez przez: ${message.author.username}`, `${message.author.avatarURL}`);
+      .setFooter(`${message.author.tag}`, `${message.author.avatarURL}`);
  
   
     message.channel.send({embed});

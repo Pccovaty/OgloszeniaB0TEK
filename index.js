@@ -97,7 +97,7 @@ fs.readdir("./komendy/", (err, files) => {
     const eembed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle("Komendy w bocie OgloszeniaBOT")
-    .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``--poll <odp 1> <odp 2> <odp 3> -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera. \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix \n ``--invite`` -> bot wysyła linka na zaproszenie na swój serwer, oraz zaproszenie na twój serwer.", "Wiecej informacji wkrótce ")
+    .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``~~--poll <odp 1> <odp 2> <odp 3>~~`` -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera. \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix \n ``--invite`` -> bot wysyła linka na zaproszenie na swój serwer, oraz zaproszenie na twój serwer.", "Wiecej informacji wkrótce ")
     .setFooter("Prefix na wszystkie komendy to --")
     message.channel.send(eembed)
   }
@@ -119,7 +119,7 @@ fs.readdir("./komendy/", (err, files) => {
     var opcje = args; // reszta argumentów
     console.log(title)
     console.log(opcje)
-    if (opcje.length !== 2) return message.channel.send("O nie! Komenda uległa awarii, developerzy zotali powiadomieni o tym błędzie!");
+    if (opcje.length !== 2) return message.channel.send("O nie! Komenda uległa awarii, developerzy zostali powiadomieni o tym błędzie!");
     let reply = ` **Pytanie:** \n ${title} \n\n **Odpowiedź:** \n ${opcje.map((o, i) => `${i + 1}: ${o}`).join("\n")}`;
     message.delete(0);
     message.channel.send({embed:  {

@@ -99,9 +99,20 @@ fs.readdir("./komendy/", (err, files) => {
     .setColor('RANDOM')
     .setThumbnail(bicon)
     .setTitle("Komendy w bocie OgloszeniaBOT")
-    .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``~~--poll <odp 1> <odp 2> <odp 3>~~`` -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera. \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix \n ``--invite`` -> bot wysyła linka na zaproszenie na swój serwer, oraz zaproszenie na twój serwer.", "Wiecej informacji wkrótce ")
+    .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``~~--poll <odp 1> <odp 2> <odp 3>~~`` -> bot robi ankiede z 3 odpowiedziami \n ``--news`` -> bot wysyła najnowsze newsy z serwera. \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix \n ``--invite`` -> bot wysyła linka na zaproszenie na swój serwer, oraz zaproszenie na twój serwer.", "Wiecej informacji wkrótce ")
     .setFooter("Prefix na wszystkie komendy to --")
     message.channel.send(eembed)
+  }
+    if(cmd === "--botinfo") {
+    const bicon = bot.user.displayAvatarURL;
+    const embed = new Discord.RichEmbed()
+    .setTitle("Informacje dotyczące bota")
+    .setColor('RANDOM')
+    .setThumbnail(bicon)
+    .addField("Serwerów:", `${bot.guilds.size}`)
+    .addField("Łącznie osób:", `${bot.users.size}`)
+    .setFooter("masz problem z botem? wejdź w ten link https://discord.gg/pppgZCV")
+    message.channel.send(embed)
   }
     if(cmd === "--invite"){
     const eambed = new Discord.RichEmbed() 

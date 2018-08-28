@@ -94,8 +94,10 @@ fs.readdir("./komendy/", (err, files) => {
     message.react("452183703267835910");
     }
   if(cmd === "--help"){
+    const bicon = bot.user.displayAvatarURL;
     const eembed = new Discord.RichEmbed()
     .setColor('RANDOM')
+    .setThumbnail(bicon)
     .setTitle("Komendy w bocie OgloszeniaBOT")
     .setDescription("``--say <treść>`` -> bot pisze to co ty napiszesz \n ``~~--poll <odp 1> <odp 2> <odp 3>~~`` -> bot robi ankiede z 3 odpowiedziami``  \n ``--news`` -> bot wysyła najnowsze newsy z serwera. \n ``--ogloszenia <treść>`` - bot wysyła ogloszenie na dany kanal \n ``Ping bota przez id`` -> bot pokazuje aktualny prefix \n ``--invite`` -> bot wysyła linka na zaproszenie na swój serwer, oraz zaproszenie na twój serwer.", "Wiecej informacji wkrótce ")
     .setFooter("Prefix na wszystkie komendy to --")

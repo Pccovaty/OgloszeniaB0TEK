@@ -111,7 +111,7 @@ fs.readdir("./komendy/", (err, files) => {
     .setThumbnail(bicon)
     .addField("Serwerów:", `${bot.guilds.size}`)
     .addField("Łącznie osób:", `${bot.users.size}`)
-    .setFooter("masz problem z botem? wejdź w ten link https://discord.gg/pppgZCV")
+    .setFooter("By ๖̶̶̶ζ͜͡Kociak 💞#6365")
     message.channel.send(embed)
   }
     if(cmd === "--invite"){

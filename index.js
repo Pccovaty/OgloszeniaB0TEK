@@ -22,7 +22,7 @@ bot.on('ready', () => {
     .setDescription("usunieto komende ``--poll``") 
     .setFooter("Kociak (DEV)")
    message.channel.send(embed);
-  }
+  }});
 
 bot.on("message", async message => {
   if (message.content === "<@469927027827408911>") {
@@ -63,8 +63,7 @@ bot.on("message", async message => {
       .setDescription("[**ogloszenie**] Hej everyone!")
       .addField("**opis**", args.join(" "))
       .setFooter(`${message.author.tag}`, `${message.author.avatarURL}`);
- 
-  
+
     message.channel.send({embed});
     message.react("452183703267835910");
     }
@@ -98,7 +97,7 @@ bot.on("message", async message => {
     }
 
 });
-});
+
 
 
 bot.on("ready", async() => {

@@ -7,24 +7,6 @@ bot.on('ready', () => {
   console.log(`Logged in as ${bot.user.tag}!`);
 });
 
-fs.readdir("./komendy/", (err, files) => {
-
-  if(err) console.log(err);
-
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.lenght <= 0){
-    console.log("Nie znaleziono komend")
-    return;
-  }
-
-  jsfile.forEach((f, i) =>{
-    let props = require(`./komendy/${f}`);
-    console.log(`Załadowano ${f}`);
-    bot.commands.set(props.help.name, props)
-  });
-
-});
-
 
 
   bot.on("message", async message => {
@@ -37,7 +19,7 @@ fs.readdir("./komendy/", (err, files) => {
   if(message.content === '--news') {
     const embed = new Discord.RichEmbed()
     .setTitle("Newsy z serwera!")
-    .setDescription("Komenda ``--poll`` jest aktualnie nieczynna, przepraszamy za usterki") 
+    .setDescription("usunieto komende ``--poll``") 
     .setFooter("Kociak (DEV)")
    message.channel.send(embed);
   }
@@ -114,45 +96,9 @@ bot.on("message", async message => {
     .setDescription("Zaproś bota na swój serwer! \n :link: https://discordapp.com/oauth2/authorize?client_id=469927027827408911&scope=bot&permissions=335560766 ")
     message.channel.send(eambed)
     }
-  if(message.content.startsWith('--poll')) {
 
-    let args = message.content.slice(1).split(" "); // komenda bez $ + argumenty oddzielone spacją
-    console.log(args)
-    args.shift(); // usuwa komendę
-    args = args.join(" ").split(" | ") // dołącza oddzielone spacją argumenty w jedność, oddziela je ;  (średnikiem i spacją)
-    console.log(args)
-    var title = args.shift(); // usuwa pierwszy argument; ustawia tytuł ankiety
-    var opcje = args; // reszta argumentów
-    console.log(title)
-    console.log(opcje)
-    if (opcje.length !== 2) return message.channel.send("O nie! Komenda uległa awarii, developerzy zostali powiadomieni o tym błędzie!");
-    let reply = ` **Pytanie:** \n ${title} \n\n **Odpowiedź:** \n ${opcje.map((o, i) => `${i + 1}: ${o}`).join("\n")}`;
-    message.delete(0);
-    message.channel.send({embed:  {
-        color: 4456192,
-        description: reply,
-        footer: {
-            icon_url: "https://images-ext-2.discordapp.net/external/SnhScc1ftasz44weF8_SF3gD16uJXwxQMCU8-XPAAeo/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/469927027827408911/1a04463a2e934f12f52f4758a965ad90.png?width=473&height=473",
-            text: "OgloszeniaBOT | v0.0.5 (Beta)"
-        
-        }
-    
-    }
-    }
-    )
-
-    .then(e => {
-        e.react("1⃣").then(setTimeout(function () {
-            e.react("2⃣").then(setTimeout(function () {
-                e.react("3⃣")
-            }, 500))
-        }, 500))
-    })
-
-}});
-
-
- 
+});
+});
 
 
 bot.on("ready", async() => {
@@ -160,4 +106,4 @@ bot.on("ready", async() => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("by ๖̶̶̶ζ͜͡Kociak 💞#6365", {type: "WATCHING"});
 });
-bot.login(process.env.BOT_TOKEN)
+bot.login(process.env.BOT_TOKEN);

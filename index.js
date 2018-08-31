@@ -8,7 +8,7 @@ bot.on('ready', () => {
 });
 
 
-
+});
   bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
@@ -22,7 +22,7 @@ bot.on('ready', () => {
     .setDescription("usunieto komende ``--poll``") 
     .setFooter("Kociak (DEV)")
    message.channel.send(embed);
-  }});
+  }
 
 bot.on("message", async message => {
   if (message.content === "<@469927027827408911>") {

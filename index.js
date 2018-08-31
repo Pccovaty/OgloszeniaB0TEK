@@ -8,7 +8,6 @@ bot.on('ready', () => {
 });
 
 
-});
   bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
@@ -27,7 +26,8 @@ bot.on('ready', () => {
 bot.on("message", async message => {
   if (message.content === "<@469927027827408911>") {
     return message.channel.send("<:Info:484996951515856906> | mój prefix to ``--``.");
-  }
+  }});
+
    if(message.content === "--Cześć"){
     message.react("✅")
     return message.channel.send("Witaj")
@@ -97,12 +97,10 @@ bot.on("message", async message => {
     }
 
 });
-
-
-
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("by ๖̶̶̶ζ͜͡Kociak 💞#6365", {type: "WATCHING"});
 });
+
 bot.login(process.env.BOT_TOKEN);

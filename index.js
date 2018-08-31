@@ -42,16 +42,9 @@ fs.readdir("./komendy/", (err, files) => {
    message.channel.send(embed);
   }
 
-  if(message.content === "<@469927027827408911>") {
-    return message.channel.send("Aktualny prefix to ``--``.");
-
-
-  }
-  if(message.content === "ogloszenia prefix") {
-    return message.channel.send("Aktualny prefix to ``--``.");
-  }
-  if(message.content === "Ogloszenia prefix") {
-    return message.channel.send("Aktualny prefix to ``--``.");
+bot.on("message", async message => {
+  if (message.content === "<@469927027827408911>") {
+    return message.channel.send("<:Info:484996951515856906> | mój prefix to ``--``.");
   }
    if(message.content === "--Cześć"){
     message.react("✅")
@@ -165,6 +158,6 @@ fs.readdir("./komendy/", (err, files) => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("--news", {type: "WATCHING"});
+  bot.user.setActivity("by ๖̶̶̶ζ͜͡Kociak 💞#6365", {type: "WATCHING"});
 });
 bot.login(process.env.BOT_TOKEN)
